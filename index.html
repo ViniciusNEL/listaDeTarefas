@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="tarefa.css">
+  <script src="tarefas.js"></script>
+  <title>Tarefas</title>
+</head>
+
+<body>
+  <div id="tarefas-app">
+    <div class="container">
+
+      <h1 class="cabecalho">Listas de Tarefas</h1>
+
+      <div class="adicionar-tarefa-container">
+        <input type="text" placeholder="Adicionar nova tarefa" id="campo-texto-tarefa">
+        <input type="submit" value="Add" id="botao-submit-tarefa" title="Adicionar tarefa" onclick="criarTarefa()">
+      </div>
+      <small></small>
+      <ul id="lista-tarefas"></ul>
+      <div class="marcar-deletar-tarefas">
+        <button id="marcar-tarefas" onclick="marcarTarefas()">Concluir tudo</button>
+        <button id="desmarcar-tarefas" onclick="desmarcarTarefas()">Desmarcar tudo</button>
+        <button id="deletar-tarefas" onclick="deletarTarefas()">Deletar tudo</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

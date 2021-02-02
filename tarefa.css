@@ -1,0 +1,145 @@
+:root {
+    --bg: #F7F1F1;
+    --primary: #00356b;
+    --primary-light: #004e9d;
+    --secondary: #0E2431;
+    --gray: #666;
+    --font-family: 'Nunito', sans-serif;
+  }
+
+  small{
+    color: #FF5555;
+    font-weight: bold;
+    opacity: 0;
+  }
+  small.show{
+    opacity: 1;
+  }
+
+/* resetar os elementos do html */
+/* usei span por ser um container genérico, quando criado no arquivo JS 
+ele automaticamente se alinha a frente do checkbox */
+html, body, div, h1, input, ul, li, span{
+
+    outline: none;
+    border: 0;
+    margin:0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: var(--font-family);
+}
+
+input, button {
+    outline: none;
+    border: 0;
+}
+
+/* quando checado aplicar as propriedades */
+ .check-tarefa:checked ~ span{
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  #tarefas-app ul li small{
+    display: block;
+    width: 20px;
+    height: 22px;
+    opacity: 0.5;
+    background-image: url(lixeira.svg);
+    position:absolute;
+    right: 2.5rem;
+    background-position: center;
+    cursor: pointer;
+   }
+   #tarefas-app ul li small:hover{
+    opacity: 1;
+   }
+
+#tarefas-app .container {
+    width: 100%; /* largura de 100% da div filha pra div pai */
+    max-width: 420px; /* maximo de largura no browser de 420px */
+    margin: 100px auto 0;
+    background-color: var(--primary);
+    padding: 3rem 2.5rem;
+    color: #fff;
+    border-radius: 5px;
+    
+}
+
+#tarefas-app .container ~ .container {
+    margin-top: 5px;
+}
+
+#tarefas-app .cabecalho {
+    font-size: 2.4rem;
+    font-weight: 400; /* peso da fonte (espessura) */
+}
+
+
+/* justify-content: space-between >>>> o primeiro item da div .adicionar-tarefa-container(input)
+é deslocado para o inicio do eixo principal e o segundo item da div .adicionar-tarefa-container(button)
+é deslocado pra o final do eixo principal */
+
+#tarefas-app .adicionar-tarefa-container {
+    display: flex;
+    justify-content: space-between; 
+    margin: 2rem 0rem;
+}
+
+ #campo-texto-tarefa {
+    font-size: 18px;
+    padding: 1rem;
+}
+
+ #botao-submit-tarefa {
+    background: transparent;
+    color: inherit;
+    font-size: 17px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    padding: 1rem 1rem;
+    margin-left: 10px;
+    
+}
+.marcar-deletar-tarefas button {
+    color: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    background: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255,255);
+    border-image: initial;
+    padding: 5px 0.5rem;
+}
+
+ ul li {
+    display: flex;
+    align-items: center;
+    justify-content: unsafe;
+    background-color: var(--primary-light);
+    padding: 1.5rem 2.5rem;
+    margin: .4rem -2.5rem;
+    position: relative;
+
+}
+
+ #titulo-tarefa {
+    font-size: 20px;
+    margin-left: .3rem;
+
+}
+
+ul li.completed {
+    font-style: italic;
+    text-decoration: line-through;
+}
+
+ul li.completed *{
+    opacity: .5;
+  }
